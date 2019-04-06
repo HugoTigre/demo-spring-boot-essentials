@@ -1,0 +1,23 @@
+{{> header}}
+
+<h1>{{app}}</h1>
+
+<div class="home">
+
+    {{#environment}}
+        <section>
+            <header class="banner">
+                <h2 class="banner-title">{{environment}}</h2>
+            </header>
+        </section>
+
+        <section>
+            <header class="version">
+                <h2 class="version"><strong>{{version}}</strong></h2>
+            </header>
+        </section>
+    {{/environment}}
+
+</div>
+
+{{> footer}}

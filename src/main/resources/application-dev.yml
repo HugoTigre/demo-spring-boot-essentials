@@ -1,0 +1,10 @@
+#
+spring-boot-essentials:
+
+  env: dev
+
+spring:
+
+  profiles:
+    include: default
+    active: dev

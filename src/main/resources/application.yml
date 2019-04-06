@@ -1,0 +1,40 @@
+#
+spring-boot-essentials:
+
+  env: default
+
+  logRequests: true
+  logResponses: true
+
+  app:
+    name: Spring-Boot-Essentials
+    version: 1.0.0
+    secret: asoifh98q34987658745q038dyhfjcas
+
+spring:
+
+  # Spring DATASOURCE (DataSourceAutoConfiguration & DataSourceProperties)
+  datasource:
+    platform: postgres
+    url: jdbc:postgresql://localhost:5432/sbedb
+    username: hugotigre
+    password: qweqwe
+
+    validationQuery: SELECT 1
+    max-active:  15
+    max-idle: 10
+    max-wait: 800
+
+  # Flyway
+  flyway:
+    enabled: true
+    encoding: UTF-8
+    group: true
+    ignore-future-migrations: true
+    table: flyway_demo_schema_history
+    locations: classpath:/db/migration
+    schemas: "public"
+
+  jpa:
+    hibernate:
+      ddl-auto: validate
