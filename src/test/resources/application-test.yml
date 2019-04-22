@@ -1,0 +1,15 @@
+spring:
+
+  profiles:
+    include: default
+    active: test
+
+  # Spring DATASOURCE (DataSourceAutoConfiguration & DataSourceProperties)
+  datasource:
+    platform: postgresql
+    url: jdbc:tc:postgresql:10.4://localhost/sbedb
+    username: postgres
+    password: postgres
+
+  flyway:
+    locations: classpath:db/migration,db/testdata

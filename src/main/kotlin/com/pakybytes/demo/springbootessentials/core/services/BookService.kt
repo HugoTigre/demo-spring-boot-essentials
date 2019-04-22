@@ -34,7 +34,7 @@ class BookService(val statusServ: StatusService,
         }
 
         log.info("New book inserted: $book")
-        return statusServ.build(MsgStatus.OK, MsgStatus.getDescr(MsgStatus.OK), resourceId = bookId.toString())
+        return statusServ.build(MsgStatus.OK, resourceId = bookId.toString())
     }
 
     /** Create a new Wine (product and wine) in a single transaction

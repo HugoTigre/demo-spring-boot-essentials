@@ -19,4 +19,5 @@ class HomeCtrl(private val conf: SpringBootEssentialsConfig) {
         model["version"] = conf.app.version
         return "home"
     }
+
 }
