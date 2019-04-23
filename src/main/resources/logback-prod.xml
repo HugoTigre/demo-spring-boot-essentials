@@ -37,10 +37,10 @@
         <smtpHost>smtp.gmail.com</smtpHost>
         <smtpPort>587</smtpPort>
         <STARTTLS>true</STARTTLS>
-        <username>pb.dev.stage@gmail.com</username>
+        <username>xxx@gmail.com</username>
         <password>dhyspdssopowoagx</password>
-        <to>hugo.tigre@gmail.com</to> <!-- additional destinations are possible -->
-        <from>pb.dev.stage@gmail.com</from>
+        <to>yyy@gmail.com</to> <!-- additional destinations are possible -->
+        <from>xxx@gmail.com</from>
         <subject>${LOG_NAME}: %logger{20} - %m</subject>
         <layout class = "ch.qos.logback.classic.html.HTMLLayout">
             <pattern>%relative%thread%mdc%(%.-3level)%logger%msg</pattern>

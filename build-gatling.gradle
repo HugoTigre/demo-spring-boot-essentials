@@ -1,0 +1,47 @@
+/**
+ * Gatling load tests
+ */
+buildscript {
+    repositories {
+        mavenCentral()
+    }
+    dependencies {
+    }
+}
+
+repositories {
+    mavenCentral()
+    jcenter()
+}
+
+apply plugin: 'scala'
+
+dependencies {
+    testImplementation('io.gatling.highcharts:gatling-charts-highcharts:3.0.3')
+
+    // this should be `testImplementation` (seems to be a bug between gradle plugin and IntelliJ)
+    // In any case this should be in a different project (see readme.md) and is only here for demonstration purposes
+    implementation('org.scala-lang:scala-library:2.12.8') 
+}
+
+
+task testLoad(type: JavaExec) {
+    description = 'Test load the Spring Boot web service with Gatling'
+    group = 'Load Test'
+    classpath = sourceSets.test.runtimeClasspath
+    jvmArgs = [
+            // workaround for https://github.com/gatling/gatling/issues/2689
+            "-Dgatling.core.directory.binaries=${sourceSets.test.output.classesDirs.toString()}",
+            "-Dlogback.configurationFile=${logbackGatlingConfig()}"
+    ]
+    main = 'io.gatling.app.Gatling'
+    args = [
+            '--simulation', 'com.pakybytes.demo.springbootessentials.delivery.controllers.HomeCtrlLoadTest',
+            '--results-folder', "${buildDir}/gatling-results",
+            '--binaries-folder', sourceSets.test.output.classesDirs.toString() // ignored because of above bug
+    ]
+}
+
+def logbackGatlingConfig() {
+    return sourceSets.test.resources.find { it.name == 'logback-gatling.xml' }
+}
