@@ -21,12 +21,14 @@ This is a Spring Boot project with an implementation of "essentials" that can be
 
   - There is a `logback.xml` and `logback-prod.xml`, the latter differs in that instead of logging to STDOUT, it logs to File and can report Errors by mail.
   
-- __Code first API documentation__ with SWAGGER (OpenAPI)
+- __Code First API documentation__ with SWAGGER (OpenAPI)
 
   - Controllers implement a controller interface to separate documentation dependency
    from controllers implementation, also, this abstracts REST dependency in case there is
    a need to replace it with another protocol
   - documentation can be access in url http://localhost:8080/swagger-ui.html
+
+- __Feature Flags__: with 
 
 - Tests:
   

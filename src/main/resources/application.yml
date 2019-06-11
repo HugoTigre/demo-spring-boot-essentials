@@ -38,3 +38,8 @@ spring:
   jpa:
     hibernate:
       ddl-auto: validate
+
+ff4j:
+  webapi:
+    authentication: false
+    authorization: false

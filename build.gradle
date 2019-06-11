@@ -62,6 +62,12 @@ dependencies {
     kapt("org.springframework.boot:spring-boot-configuration-processor")
     implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.1.1")
 
+    // Feature Flags
+    implementation('org.ff4j:ff4j-core:1.8')
+    implementation('org.ff4j:ff4j-web:1.8')
+    implementation('org.ff4j:ff4j-webapi:1.8')
+    testImplementation('org.ff4j:ff4j-test:1.8')
+
     // Tests
     testImplementation('org.springframework.boot:spring-boot-starter-test') {
         exclude module: 'junit'
